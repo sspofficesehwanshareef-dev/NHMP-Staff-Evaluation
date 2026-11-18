@@ -4,8 +4,9 @@ import {createClient} from '@supabase/supabase-js';
 import {BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer,CartesianGrid,Legend} from 'recharts';
 import './style.css';
 
-const url=import.meta.env.VITE_SUPABASE_URL, key=import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase=url&&key&&!url.includes('YOUR-PROJECT')?createClient(url,key):null;
+const url = import.meta.env.VITE_SUPABASE_URL;
+const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const supabase = url && key ? createClient(url, key) : null;
 const units=['LHQ / SP Office','Beat-01 Petaro','Beat-02 Sann','Beat-03 Sehwan'];
 const ratings=[{label:'Excellent',score:4},{label:'Good',score:3},{label:'Average',score:2},{label:'Poor',score:1}];
 const demoStaff=[
